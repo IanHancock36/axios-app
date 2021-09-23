@@ -7,24 +7,15 @@ function App() {
 
   // the useEffect runs when the component mounts and sets the state when its requested.
   useEffect(()=>{
-
-  },[])
+    //fetch the data
+    fetch("https://jsonplaceholder.typicode.com/posts")
+    .then(res => res.json())
+    .then(data => setApiData(data))
+},[])
+console.log(apiData)
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+     
     </div>
   );
 }
