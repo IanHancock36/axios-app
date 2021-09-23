@@ -15,12 +15,25 @@ function App() {
 // },[])
 
 //*** AXIOS */
-useEffect(() => {
-  axios("https://jsonplaceholder.typicode.com/posts")
-  .then(data=> setApiData(data.data))
-},[])
+// useEffect(() => {
+//   axios("https://jsonplaceholder.typicode.com/posts")
+//   .then(data=> setApiData(data.data))
+// },[])
+// *** AXIOS TRY CATCH /// 
 
-console.log(apiData)
+axios.get('https://jsonplaceholder.typicode.com/posts', data).then(res => {
+
+})
+.catch(err => {
+if (err.response) {
+// client received an error response (5xx, 4xx)
+} else if (err.request) {
+// client never received a response, or request never left
+} else {
+// anything else
+}
+})
+
   return (
     <div>
      {apiData ? apiData.map(item => <h2 key={item.id}>{item.title}</h2>) : null}
