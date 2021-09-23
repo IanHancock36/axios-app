@@ -14,8 +14,8 @@ function App() {
 },[])
 console.log(apiData)
   return (
-    <div className="App">
-     
+    <div>
+     {apiData ? apiData.map(item => <h2 key={item.id}>{item.title}</h2>) : null}
     </div>
   );
 }
